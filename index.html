@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <meta name="description" content="A classic to-do list." />
+    <meta name="theme-color" content="#0e0e0f" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="fonts/hanken-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="card">
+      <h1 class="card__title">Todo</h1>
+
+      <form class="add" id="add-form">
+        <label class="visually-hidden" for="task-input">New task</label>
+        <input
+          class="add__input"
+          id="task-input"
+          type="text"
+          placeholder="Add a task"
+          autocomplete="off"
+          required
+          pattern=".*\S.*"
+          title="Type at least one character" />
+        <button class="add__button" type="submit">Add</button>
+      </form>
+
+      <!-- Sample rows: render these from JS using #task-template -->
+      <ol class="tasks" id="task-list">
+        <li class="task">
+          <label class="task__label">
+            <input class="task__check" type="checkbox" />
+            <span class="task__text">Call the dentist about Thursday</span>
+          </label>
+          <button class="task__delete" type="button" aria-label="Delete task">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </li>
+        <li class="task">
+          <label class="task__label">
+            <input class="task__check" type="checkbox" checked />
+            <span class="task__text">Renew the library card</span>
+          </label>
+          <button class="task__delete" type="button" aria-label="Delete task">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </li>
+        <li class="task">
+          <label class="task__label">
+            <input class="task__check" type="checkbox" />
+            <span class="task__text">Send the invoice to Marta</span>
+          </label>
+          <button class="task__delete" type="button" aria-label="Delete task">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </li>
+        <li class="task">
+          <label class="task__label">
+            <input class="task__check" type="checkbox" />
+            <span class="task__text">Buy coffee filters</span>
+          </label>
+          <button class="task__delete" type="button" aria-label="Delete task">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </li>
+      </ol>
+
+      <p class="empty" id="empty-message" hidden>
+        Nothing here yet. Add your first task above.
+      </p>
+
+      <footer class="footer">
+        <p class="footer__count" id="remaining" aria-live="polite">3 left</p>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">
+            All
+          </button>
+          <button class="filter" type="button" data-filter="active" aria-pressed="false">
+            Active
+          </button>
+          <button class="filter" type="button" data-filter="done" aria-pressed="false">
+            Done
+          </button>
+        </div>
+        <button class="footer__clear" id="clear-completed" type="button">
+          Clear completed
+        </button>
+      </footer>
+    </main>
+
+    <template id="task-template">
+      <li class="task">
+        <label class="task__label">
+          <input class="task__check" type="checkbox" />
+          <span class="task__text"></span>
+        </label>
+        <button class="task__delete" type="button" aria-label="Delete task">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M4 4l8 8M12 4l-8 8" />
+          </svg>
+        </button>
+      </li>
+    </template>
+  </body>
+</html>

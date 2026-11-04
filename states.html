@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo: states</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        place-items: start center;
+        padding-block: 3rem;
+      }
+
+      .states {
+        width: min(37.5rem, 100%);
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      .states__name {
+        margin-bottom: 0.75rem;
+        font-size: inherit;
+        font-weight: 400;
+        color: var(--color-text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="states">
+      <section>
+        <h2 class="states__name">Empty list</h2>
+        <div class="card">
+          <h1 class="card__title">Todo</h1>
+          <form class="add">
+            <input class="add__input" type="text" placeholder="Add a task" aria-label="New task" />
+            <button class="add__button" type="button">Add</button>
+          </form>
+          <p class="empty">Nothing here yet. Add your first task above.</p>
+          <div class="footer">
+            <p class="footer__count">0 left</p>
+            <div class="filters">
+              <button class="filter" type="button" aria-pressed="true">All</button>
+              <button class="filter" type="button" aria-pressed="false">Active</button>
+              <button class="filter" type="button" aria-pressed="false">Done</button>
+            </div>
+            <button class="footer__clear" type="button" disabled>Clear completed</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="states__name">Filter with no matches</h2>
+        <div class="card">
+          <h1 class="card__title">Todo</h1>
+          <form class="add">
+            <input class="add__input" type="text" placeholder="Add a task" aria-label="New task" />
+            <button class="add__button" type="button">Add</button>
+          </form>
+          <p class="empty">No done tasks.</p>
+          <div class="footer">
+            <p class="footer__count">2 left</p>
+            <div class="filters">
+              <button class="filter" type="button" aria-pressed="false">All</button>
+              <button class="filter" type="button" aria-pressed="false">Active</button>
+              <button class="filter" type="button" aria-pressed="true">Done</button>
+            </div>
+            <button class="footer__clear" type="button" disabled>Clear completed</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="states__name">Long text and everything done</h2>
+        <div class="card">
+          <h1 class="card__title">Todo</h1>
+          <form class="add">
+            <input class="add__input" type="text" value="Typing a new task" aria-label="New task" />
+            <button class="add__button" type="button">Add</button>
+          </form>
+          <ol class="tasks">
+            <li class="task">
+              <label class="task__label">
+                <input class="task__check" type="checkbox" checked />
+                <span class="task__text">Go through every open invoice from last quarter, match each one to its bank transfer and send the summary to Marta before Friday</span>
+              </label>
+              <button class="task__delete" type="button" aria-label="Delete task">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 4l8 8M12 4l-8 8" />
+                </svg>
+              </button>
+            </li>
+            <li class="task">
+              <label class="task__label">
+                <input class="task__check" type="checkbox" checked />
+                <span class="task__text">Zadzwonić do księgowej w środę</span>
+              </label>
+              <button class="task__delete" type="button" aria-label="Delete task">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 4l8 8M12 4l-8 8" />
+                </svg>
+              </button>
+            </li>
+          </ol>
+          <div class="footer">
+            <p class="footer__count">0 left</p>
+            <div class="filters">
+              <button class="filter" type="button" aria-pressed="true">All</button>
+              <button class="filter" type="button" aria-pressed="false">Active</button>
+              <button class="filter" type="button" aria-pressed="false">Done</button>
+            </div>
+            <button class="footer__clear" type="button">Clear completed</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+# Design and agent working files
+.impeccable/
+.agents/
+.claude/
+PRODUCT.md
+
+# Editor
+.vscode/
+
+# Operating system
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Logs
+*.log
