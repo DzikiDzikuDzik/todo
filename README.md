@@ -2,6 +2,8 @@
 
 A classic to-do list built with plain HTML, CSS and JavaScript. No framework, no build step.
 
+**Live demo:** https://shiny-zuccutto-3c2264.netlify.app
+
 ## Features
 
 - Add a task with Enter or the Add button. Empty or whitespace-only input adds nothing.
